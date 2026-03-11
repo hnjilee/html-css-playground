@@ -1,0 +1,42 @@
+<!-- Margin Collapse -->
+
+<!-- 세로 margin이 겹칠 때 큰 값이 적용되는 현상 -->
+<!-- 1. 형제 요소 사이 2. 부모와 첫/마지막 자식 간 -->
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Margin Collapse</title>
+    <style>
+      .parent {
+        width: 200px;
+        height: 200px;
+
+        /* collapse 방지 방법: 이 중 하나가 있으면 막힘 */
+        /* padding-top: 1px; */
+        /* border-top: 1px solid black; */
+        /* overflow: hidden; */
+        /* display: flex; */
+        /* display: grid; */
+
+        background-color: blue;
+      }
+
+      /* margin이 부모 안에서 적용되는 게 아니라 */
+      /* 부모 밖으로 튀어나옴 → 부모 자체가 밀림 */
+      .child {
+        width: 50px;
+        height: 50px;
+        margin-top: 40px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+  </body>
+</html>
