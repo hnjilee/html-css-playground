@@ -1,0 +1,38 @@
+<!-- Box Model -->
+
+<!-- CSS에서 요소가 렌더링되는 작동원리 -->
+<!-- content, padding, border, margin -->
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Model</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        border: 10px solid black;
+        margin: 10px;
+        background-color: blue;
+      }
+
+      .border-box {
+        box-sizing: border-box;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- content-box(기본값): width/height에 padding과 border가 더해져서 box size가 계산됨 -->
+    <!-- 최종 box size = 100(width/height) + 10*2(padding) + 10*2(border) = 140px -->
+    <div class="box"></div>
+
+    <!-- border-box: box size는 width/height로 고정되고, padding과 border가 그 안에 포함됨 (즉, content가 줄어듬) -->
+    <!-- 최종 box size = 100(width/height) -->
+    <!-- content size = 100(width/height) - 10*2(padding) - 10*2(border) = 60px -->
+    <div class="box border-box"></div>
+  </body>
+</html>
