@@ -1,0 +1,68 @@
+<!-- Display -->
+
+<!-- 요소의 배치 방식을 결정하는 속성 -->
+<!-- HTML 요소의 기본 display는 CSS로 변경할 수 있다. -->
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display</title>
+    <style>
+      body {
+        width: 100vw;
+        margin: 0;
+      }
+
+      div {
+        margin: 10px 0;
+        background-color: skyblue;
+      }
+
+      span {
+        background-color: pink;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        margin: 10px;
+      }
+
+      .inline-block {
+        display: inline-block;
+      }
+
+      .none {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- block: 부모 width 가득 채움 -->
+    <div>block 요소는</div>
+    <div>항상 새로운 줄에서 시작한다</div>
+
+    <!-- inline: 콘텐츠 크기만큼 차지 -->
+    <span>inline 요소는</span>
+    <span>한 줄에 여러 개 배치할 수 있다</span>
+
+    <!-- block: 박스 크기 제어 가능 -->
+    <!-- width/height/padding/margin 모두 적용됨 -->
+    <div class="box"></div>
+
+    <!-- inline: 박스 크기 제어 불가 -->
+    <!-- width/height/상하 margin 적용 안 됨 -->
+    <span class="box">콘텐츠</span>
+
+    <!-- display는 변경 가능 -->
+    <!-- inline-block: 한 줄에 여러 개 배치 + 박스 크기 제어 가능 -->
+    <div class="box inline-block"></div>
+    <span class="box inline-block"></span>
+
+    <!-- none: 레이아웃에서 제거됨 -->
+    <div class="box none"></div>
+  </body>
+</html>
