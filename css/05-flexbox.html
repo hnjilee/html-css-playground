@@ -1,0 +1,65 @@
+<!-- Flexbox -->
+
+<!-- 요소들의 한 방향 정렬과 공간 분배를 위한 1차원 레이아웃 시스템 -->
+<!-- main 축(기본은 가로) & cross 축(기본은 세로) -->
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox</title>
+    <style>
+      .container {
+        /* 부모는 flexbox로, 자식은 flex item으로 설정 */
+        display: flex;
+
+        /* 축 방향 변경 */
+        /* flex-direction: column; */
+
+        /* main axis 정렬 */
+        /* flex-start(기본값), center, flex-end, space-between, space-around, space-evenly */
+        justify-content: space-between;
+
+        /* cross axis 정렬 */
+        /* stretch(기본값), flex-start, center, flex-end, baseline */
+        align-items: center;
+
+        width: 500px;
+        height: 500px;
+        background-color: skyblue;
+      }
+
+      .item {
+        /* item 크기 비율 */
+        /* flex: 1; */
+
+        width: 50px;
+
+        /* align-items: stretch(기본값) 지정 시, 부모 height을 가득 채움 */
+        /* height: auto; */
+        height: 50px;
+
+        margin: 5px;
+        background-color: pink;
+      }
+
+      /* 해당 아이템은 크기 2배 */
+      /* .item:nth-child(2) {
+        flex: 2;
+      } */
+
+      /* 해당 아이템은 크기 3배 */
+      /* .item:nth-child(3) {
+        flex: 3;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </body>
+</html>
