@@ -1,0 +1,111 @@
+<!-- CSS Position -->
+
+<!-- 요소의 배치 기준을 결정하는 속성 -->
+<!-- 기본 흐름에서 벗어나 어디(좌표)를 기준으로 위치를 계산할지 정의 -->
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position</title>
+    <style>
+      body {
+        display: flex;
+        height: 200vh;
+        overflow-y: scroll;
+      }
+
+      .parent {
+        position: relative;
+        width: 300px;
+        height: 500px;
+        margin-right: 10px;
+        background-color: blue;
+        overflow-y: auto;
+      }
+
+      .child {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 5px;
+        background-color: red;
+      }
+
+      #special {
+        /* relative: 자기 자신 기준 이동, 기존 공간 유지 */
+        /* position: relative; */
+
+        /* absolute: closest positioned ancestor 기준 이동, 
+          기본 흐름에서 빠져나옴 → 기존 공간 제거 */
+        position: absolute;
+
+        top: 10px;
+        left: 10px;
+        background-color: yellow;
+      }
+
+      /* fixed: viewport 기준 스크롤 시 고정 */
+      .floating {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        padding: 8px 12px;
+        font-size: 16px;
+      }
+
+      /* sticky: 평소에는 문서 흐름에 따라 일반적인 위치(relative)에 있다가
+      스크롤해서 임계점에 도달하는 순간 closest scroll box 기준으로 fixed처럼 고정됨 */
+      .sticky {
+        position: sticky;
+        top: 0px;
+        width: 100%;
+        padding: 8px 0;
+        margin-bottom: 5px;
+        background-color: darkturquoise;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- relative vs absolute 비교 -->
+    <div class="parent">
+      <div class="child"></div>
+      <div class="child" id="special"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+    </div>
+
+    <!-- sticky 확인 -->
+    <div class="parent">
+      <header class="sticky">HEADER1</header>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <header class="sticky">HEADER2</header>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <header class="sticky">HEADER3</header>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <header class="sticky">HEADER4</header>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+    </div>
+
+    <!-- fixed 확인 -->
+    <button class="floating">BUTTON</button>
+  </body>
+</html>
