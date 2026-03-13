@@ -1,0 +1,79 @@
+<!-- Selector -->
+
+<!-- 스타일을 적용할 요소를 선택하는 규칙 -->
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selector</title>
+    <style>
+      /* Universal */
+      * {
+        color: green;
+      }
+      /* Element */
+      section {
+        width: 500px;
+        background-color: beige;
+      }
+
+      /* Class */
+      .para {
+        color: darkblue;
+      }
+
+      /* Id */
+      #special {
+        color: red;
+      }
+
+      /* Descendant */
+      /* section 안의 모든 p */
+      section p {
+        font-size: 16px;
+      }
+
+      /* Child */
+      /* section의 직접 자식 p */
+      section > p {
+        font-size: 20px;
+      }
+
+      /* Adjacent sibling */
+      /* h2 바로 뒤 p */
+      h2 + p {
+        background-color: chartreuse;
+      }
+
+      /* General sibling */
+      /* h2 뒤의 모든 p */
+      h2 ~ p {
+        padding: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>Heading 1</h1>
+      <p class="para">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        <span id="special">Ducimus, perspiciatis.</span>
+      </p>
+      <article>
+        <h2>Heading 2</h2>
+        <p class="para">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit id
+          cum tempora quaerat at maiores assumenda illo expedita, ducimus illum
+          dolor, ab porro nobis dignissimos consequatur beatae eos magnam iure.
+        </p>
+        <p class="para">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit id
+          cum tempora quaerat at maiores assumenda illo expedita, ducimus illum
+          dolor, ab porro nobis dignissimos consequatur beatae eos magnam iure.
+        </p>
+      </article>
+    </section>
+  </body>
+</html>
