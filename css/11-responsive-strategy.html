@@ -1,0 +1,53 @@
+<!-- Mobile-first vs Desktop-first -->
+
+<!-- 다양한 화면 크기에 따라 레이아웃이 자연스럽게 동작하도록 UI를 설계하는 전략 -->
+
+<!-- Mobile-first: 모바일 레이아웃 → 큰 화면 -->
+<!-- Desktop-first: 데스크탑 레이아웃 → 작은 화면 -->
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Strategy</title>
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+      }
+
+      /* Mobile-first */
+      .container {
+        width: 100%;
+        height: 100vh;
+        background-color: grey;
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          width: 720px;
+          margin: auto;
+        }
+      }
+
+      /* Desktop-first */
+      /* .container {
+        width: 1024px;
+        height: 100vh;
+        margin: auto;
+        background-color: grey;
+      }
+
+      @media (max-width: 1024px) {
+        .container {
+          width: 90%;
+        }
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+  </body>
+</html>
