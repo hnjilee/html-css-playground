@@ -1,0 +1,32 @@
+<!-- Media Query -->
+
+<!-- 화면 크기나 디바이스 조건에 따라 CSS를 다르게 적용하는 기능 -->
+<!-- 주로 반응형 디자인 구현을 위해 사용함 -->
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Query</title>
+    <style>
+      /* 데스크탑 → 1024px */
+      .container {
+        margin: auto;
+        width: 1024px;
+        height: 400px;
+        background-color: grey;
+      }
+
+      /* 태블릿/모바일 → 90% */
+      @media (max-width: 1024px) {
+        .container {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+  </body>
+</html>
