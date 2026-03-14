@@ -1,0 +1,32 @@
+<!-- Inheritance -->
+
+<!-- 부모 요소의 CSS 속성이 자식 요소에 상속되는 동작 -->
+<!-- 불필요한 반복 스타일을 줄이기 위함 -->
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inheritance</title>
+    <style>
+      /* 상속 O - 텍스트 관련 속성 */
+      /* p는 직접 지정하지 않았지만 body의 font-family와 color를 상속받음 */
+      body {
+        font-family: 'Times New Roman', Times, serif;
+        color: blue;
+      }
+
+      /* 상속 X - 레이아웃 관련 속성 */
+      div {
+        border: 2px solid red;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>Hello</p>
+    </div>
+  </body>
+</html>
