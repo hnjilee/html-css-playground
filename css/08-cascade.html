@@ -1,0 +1,66 @@
+<!-- Cascade -->
+
+<!-- CSS 규칙 충돌 시 어떤 스타일이 최종적으로 적용되는지 결정하는 전체 규칙 시스템 -->
+<!-- 결정 순서: Origin & Importance → Specificity → Source Order -->
+
+<!-- 1. Origin & Importance: !important > author CSS > browser default -->
+<!-- 2. Specificity: inline > id > class > element -->
+<!-- 3. Source Order: 나중에 선언된 규칙이 적용됨 -->
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cascade</title>
+    <style>
+      /* ============================
+         1. origin과 important 여부 확인
+         ============================ */
+
+      /* !important가 있는 스타일이 적용됨 */
+      h1 {
+        color: blue !important;
+      }
+
+      h1 {
+        color: red;
+      }
+
+      /* ============================
+         2. selector specificity 확인
+         ============================ */
+
+      p {
+        color: blue;
+      }
+
+      .para {
+        color: green;
+      }
+
+      /* 우선순위가 가장 높은 id selector가 적용됨 */
+      #special {
+        color: red;
+      }
+
+      /* ============================
+         3. 코드 선언 순서 확인
+         ============================ */
+
+      button {
+        background-color: yellow;
+      }
+
+      /* 나중에 선언된 규칙이 적용됨 */
+      button {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Heading</h1>
+    <p class="para" id="special">Paragraph</p>
+    <button>Button</button>
+  </body>
+</html>
